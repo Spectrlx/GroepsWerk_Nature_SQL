@@ -1,8 +1,28 @@
-CREATE IF NOT EXISTS begeleider (
+CREATE IF NOT EXISTS Begeleider (
 	begeleider_id SERIAL PRIMARY KEY NOT NULL,
+	naam varchar(50) not null,
+	telefoon int not null,
+	adres varchar(45) not null,
+	gemeente varchar(45) not null,
+	email varchar(45) not null
+);
+
+CREATE IF NOT EXISTS Klant (
+	klant_id SERIAL PRIMARY KEY NOT NULL,
+	naam varchar(50) not null,
+	telefoon int not null,
+	betalingsgegevens varchar(50),
+	adres varchar(45) not null,
+	gemeente varchar(45) not null,
+	email varchar(45) not null
+);
+
+CREATE IF NOT EXISTS Factuur (
+	factuur_id SERIAL PRIMARY KEY NOT NULL,
+	factuur_datum date not null,
+	betaald boolean not null,
+	programma varchar(45) not null,
 	
-
-
 );
 
 
@@ -11,13 +31,3 @@ CREATE IF NOT EXISTS begeleider (
 
 
 
-CREATE TABLE IF NOT EXISTS dbr01_g07.Programma(
-    id_programma SERIAL PRIMARY KEY NOT NULL,
-    FK_id_groep INT NOT NULL,
-    FK_id_factuur INT NOT NULL,
-    naam varchar(50) NOT NULL,
-    omschrijving TEXT NOT NULL,
-    beginDatum DATE NOT NULL,
-    eindDatum DATE NOT NULL,
-    kost DECIMAL 
-);
