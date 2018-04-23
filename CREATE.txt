@@ -1,4 +1,4 @@
-CREATE IF NOT EXISTS Begeleider (
+CREATE IF NOT EXISTS  "dbR01_g03".Begeleider (
 	begeleider_id SERIAL  NOT NULL,
 	naam varchar(50) not null,
 	telefoon int not null,
@@ -9,7 +9,7 @@ CREATE IF NOT EXISTS Begeleider (
 	primary key(begeleider_id)
 );
 
-CREATE IF NOT EXISTS Klant (
+CREATE IF NOT EXISTS "dbR01_g03".Klant (
 	klant_id SERIAL  NOT NULL,
 	naam varchar(50) not null,
 	telefoon int not null,
@@ -21,7 +21,10 @@ CREATE IF NOT EXISTS Klant (
 	primary key (klant_id)
 );
 
-CREATE IF NOT EXISTS Factuur (
+----------------------------------------------
+-----------------TODO------------------------
+
+CREATE IF NOT EXISTS "dbR01_g03".Factuur (
 	factuur_id SERIAL PRIMARY KEY NOT NULL,
 	factuur_datum date not null,
 	betaald boolean not null,
@@ -30,7 +33,7 @@ CREATE IF NOT EXISTS Factuur (
 	primary key (factuur_id)
 );
 
-CREATE IF NOT EXISTS programma (
+CREATE IF NOT EXISTS "dbR01_g03".Programma (
 	programma_id SERIAL not null,
 	datum date not null,
 	einduur time,
