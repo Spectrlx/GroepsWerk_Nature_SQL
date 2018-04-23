@@ -1,0 +1,23 @@
+CREATE IF NOT EXISTS begeleider (
+	begeleider_id SERIAL PRIMARY KEY NOT NULL,
+	
+
+
+);
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS dbr01_g07.Programma(
+    id_programma SERIAL PRIMARY KEY NOT NULL,
+    FK_id_groep INT NOT NULL,
+    FK_id_factuur INT NOT NULL,
+    naam varchar(50) NOT NULL,
+    omschrijving TEXT NOT NULL,
+    beginDatum DATE NOT NULL,
+    eindDatum DATE NOT NULL,
+    kost DECIMAL 
+);
