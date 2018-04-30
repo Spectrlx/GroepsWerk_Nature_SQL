@@ -1,4 +1,4 @@
-CREATE IF NOT EXISTS  "dbR01_g03".Begeleider (
+CREATE Table IF NOT EXISTS  "dbR01_g03".Begeleider (
 	begeleider_id SERIAL  NOT NULL,
 	naam varchar(50) not null,
 	telefoon int not null,
@@ -9,7 +9,7 @@ CREATE IF NOT EXISTS  "dbR01_g03".Begeleider (
 	primary key(begeleider_id)
 );
 
-CREATE IF NOT EXISTS "dbR01_g03".Klant (
+CREATE TABLE IF NOT EXISTS "dbR01_g03".Klant (
 	klant_id SERIAL  NOT NULL,
 	naam varchar(50) not null,
 	telefoon int not null,
@@ -21,19 +21,19 @@ CREATE IF NOT EXISTS "dbR01_g03".Klant (
 	primary key (klant_id)
 );
 
-----------------------------------------------
------------------TODO------------------------
 
-CREATE IF NOT EXISTS "dbR01_g03".Factuur (
-	factuur_id SERIAL PRIMARY KEY NOT NULL,
+CREATE Table if not exists  "dbR01_g03".Factuur (
+	factuur_id SERIAL  NOT NULL,
 	factuur_datum date not null,
 	betaald boolean not null,
 	programma varchar(45) not null,
+	klant_id int not null,
 	
-	primary key (factuur_id)
+	CONSTRAINT factuur_id_pk primary key (factuur_id),
+	constraint klant_id_fk foreign key (klant_id) references "dbR01_g03".Klant (Klant_id)
 );
 
-CREATE IF NOT EXISTS "dbR01_g03".Programma (
+CREATE Table IF NOT EXISTS "dbR01_g03".Programma (
 	programma_id SERIAL not null,
 	datum date not null,
 	einduur time,
@@ -42,6 +42,74 @@ CREATE IF NOT EXISTS "dbR01_g03".Programma (
 	primary key (programma_id)
 );
 
+CREATE table if not exists "dbR01_g03".Werkvorm (
+	werkvorm_id serial not null,
+	naam varchar(50) not null,
+	aard varchar(50),
+	hoeveelgebruikt int,
+	
+	constraint werkvorm_id_pk primary key (werkvorm_id)
+	
+);
+
+CREATE table if not exists "dbR01_g03".GroepDeelnemers (
+	groepdeelnemers_id Serial not null,
+	groepgrootte int,
+	werkvorm_id int not null,
+	
+	constraint groepdeelnemers_id_pk primary key (groepdeelnemers_id),
+	constraint werkvorm_id_fk foreign key (werkvorm_id) references "dbR01_g03".Werkvorm (werkvorm_id)
+);
+
+CREATE table if not exists "dbR01_g03".Groep (
+	groep_id Serial not null,
+	aantal_personen int  NOT NULL,
+	leeftijdcategorie int,
+	opmerkingen varchar(60),
+	groepdeelnemers_id int not null,
+	
+	constraint groep_id_pk primary key (groep_id),
+	constraint groepdeelnemers_id_fk foreign key (groepdeelnemers_id) references "dbR01_g03".GroepDeelnemers (groepdeelnemers_id)
+);
+
+CREATE table if not exists "dbR01_g03".Individu (
+	individu_id serial not null,
+	naam varchar(30) not null,
+	leeftijd int not null,
+	klant_id int not null,
+	groepdeelnemers_id int not null,
+	
+	constraint individu_id_pk primary key (individu_id),
+	constraint groepdeelnemers_id_fk foreign key (groepdeelnemers_id) references "dbR01_g03".GroepDeelnemers (groepdeelnemers_id),
+	constraint klant_id_fk foreign key (klant_id) references "dbR01_g03".Klant (klant_id)
+);
+
+CREATE table if not exists "dbR01_g03".Activiteit (
+	activiteit_id serial not null,
+	naam varchar(50) not null,
+	locatie varchar(50),
+	
+	constraint activiteit_id_pk primary key (activiteit_id)
+);
+
+CREATE table if not exists "dbR01_g03".Rapportage (
+	rapportage_id serial not null,
+	opmerking varchar(75) not null,
+	programma_id int not null,
+	
+	
+	constraint rapportage_id_pk primary key (rapportage_id),
+	constraint programma_id_fk foreign key (programma_id) references "dbR01_g03".Programma (programma_id)
+
+);
+
+CREATE table if not exists "dbR01_g03".Materiaal (
+	materiaal_id Serial not null,
+	naam varchar(50) not null,
+	
+	constraint materiaal_id_pk primary key (materiaal_id)
+	
+);
 
 
 
