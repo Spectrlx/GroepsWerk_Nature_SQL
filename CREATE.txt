@@ -7,7 +7,8 @@ CREATE Table IF NOT EXISTS  "dbR01_g03".Begeleider (
 	email varchar(45) not null,
 	soort_begeleider varchar(20) not null,
 	
-	primary key(begeleider_id)
+	CONSTRAINT begeleider_id_pk primary key (begeleider_id)
+	
 );
 
 CREATE TABLE IF NOT EXISTS "dbR01_g03".Klant (
@@ -19,7 +20,7 @@ CREATE TABLE IF NOT EXISTS "dbR01_g03".Klant (
 	gemeente varchar(45) not null,
 	email varchar(45) not null
 	
-	primary key (klant_id)
+	CONSTRAINT Klant_id_PK PRIMARY KEY (klant_id)
 );
 
 
