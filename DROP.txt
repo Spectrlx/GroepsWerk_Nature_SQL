@@ -1,29 +1,14 @@
-DROP TABLE IF EXISTS "dbR01_g03".ProgrammaBegeleiding
-
-DROP TABLE IF EXISTS "dbR01_g03".MateriaalSelectie
-
-DROP TABLE IF EXISTS "dbR01_g03".ProgrammaOnderdeel
-
-DROP TABLE IF EXISTS "dbR01_g03".Deelname
-
-DROP TABLE IF EXISTS "dbR01_g03".Materiaal
-
-DROP TABLE IF EXISTS "dbR01_g03".Rapportage
-
-DROP TABLE IF EXISTS “dbR01_g03".Activiteit
-
-DROP TABLE IF EXISTS "dbR01_g03".Individu
-
-DROP TABLE IF EXISTS "dbR01_g03".Groep
-
-DROP TABLE IF EXISTS "dbR01_g03".GroepDeelnemers
-
-DROP TABLE IF EXISTS "dbR01_g03".Werkvorm
-
-DROP TABLE IF EXISTS "dbR01_g03".Programma
-
-DROP TABLE IF EXISTS "dbR01_g03".Factuur
-
-DROP TABLE IF EXISTS "dbR01_g03".Klant
-
-DROP TABLE IF EXISTS "dbR01_g03".Begeleider
+DROP TABLE IF EXISTS "dbR01_g03".materiaalSelectie;
+DROP TABLE IF EXISTS "dbR01_g03".programmaOnderdeel;
+DROP TABLE IF EXISTS "dbR01_g03".deelname;
+DROP TABLE IF EXISTS "dbR01_g03".materiaal;
+DROP TABLE IF EXISTS "dbR01_g03".rapportage;
+DROP TABLE IF EXISTS "dbR01_g03".activiteit;
+DROP TABLE IF EXISTS "dbR01_g03".individu;
+DROP TABLE IF EXISTS "dbR01_g03".groep;
+DROP TABLE IF EXISTS "dbR01_g03".groepDeelnemers;
+DROP TABLE IF EXISTS "dbR01_g03".werkvorm;
+DROP TABLE IF EXISTS "dbR01_g03".programma;
+DROP TABLE IF EXISTS "dbR01_g03".factuur;
+DROP TABLE IF EXISTS "dbR01_g03".klant;
+DROP TABLE IF EXISTS "dbR01_g03".begeleider;
