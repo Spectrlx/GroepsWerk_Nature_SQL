@@ -13,7 +13,7 @@ VALUES
 	( 'Paul Goosens', 0471208257, 'Viaductstraat 2', 'Tienen', 'paul.goosens@gmail.com', 'vast'),
 	( 'Gert Roelen', 0897275019, 'Boterstraat 132', 'Brussel', 'gertroelen@icloud.com', 'vrijwilliger'),
 	( 'Linda Mertens', 0472334018, 'Bloemenlaan 23', 'Tienen', 'linda.mertens@telenet.be', 'vast'),
-	( 'Gerard Dubois', 0587125627, 'Rue d'Enfer 98', 'Jodoigne', 'gerard.dubois@hotmail.com', 'vrijwilliger'), 
+	( 'Gerard Dubois', 0587125627, 'Rue dEnfer 98', 'Jodoigne', 'gerard.dubois@hotmail.com', 'vrijwilliger'), 
 	( 'Marie Jacobs', 0478229510, 'Ruiterijlaan 276', 'Brussel', 'mariejacobs@gmail.com', 'vrijwilliger'),
 	( 'Leen Willems', 0455297004, 'Regentstraat 65', 'Antwerpen', 'willems.leen@icloud.com', 'vast'),
 	( 'Mia De Smet', 0889250062, 'Parkstraat 10', 'Leuven', 'miadesmet@gmail.com', 'vrijwilliger'),
@@ -23,7 +23,7 @@ VALUES
 	( 'Lien Laurent', 0489002938, 'Gilainstraat 20', 'Tienen', 'lienlaurant@gmail.com', 'vast');
 
 INSERT INTO "dbR01_g03".klant ( naam, telefoon, betalingsgegevens, adres, gemeente, email)
-VALUES	( 'Emma Lejeune', 04619927265, 'BE32 9978 1260 2997', 'Alexianenweg 18', 'Antwerpen', 'emmalejeune@gmail.com'),
+VALUES	( 'Emma Lejeune', 0461992726, 'BE32 9978 1260 2997', 'Alexianenweg 18', 'Antwerpen', 'emmalejeune@gmail.com'),
 	( 'Lucas Smets', 0432998267, 'BE32 7723 1098 2192', 'Beekstraat 165', 'Leuven', 'lucas.smets@hotmail.com'),
 	( 'Arthur Claessens', 0238197026, 'BE56 9128 2735 0398', 'Populierenstraat 17', 'Brussel', 'kingarthur@gmail.com'),
 	( 'Hugo Vanschouwbroek', 0488729108, 'NL22 2909 2102 8565', 'Stokstaartstraat 20C', 'Amsterdam', 'hugo.vanschouwbroek@gmail.com'),
@@ -35,7 +35,7 @@ VALUES	( 'Emma Lejeune', 04619927265, 'BE32 9978 1260 2997', 'Alexianenweg 18', 
 	( 'Lisa Willems', 0488228119, 'BE99 1264 3748 2384', 'Groenstraat 666', 'Tienen', 'lisa.willems@gmail.com');
 
 INSERT INTO "dbR01_g03".factuur ( factuur_datum, betaald, programma, klant_id)
-VALUES	( 02/12/17, true, 'team building', 1),
+VALUES	( '02/12/17', true, 'team building', 1),
 	( '04/02/18', true, 'adventure', 2),
 	( '12/04/18', false, 'zelf ontdekking', 3),
 	( '12/04/18', false, 'zelf ontdekking extra', 3),
@@ -65,7 +65,7 @@ VALUES	( '22/04/17', '12:00:00', '8:00:00'),
 	( '09/12/17', '22:00:00', '16:00:00'),
 	( '13/01/18', '18:00:00', '12:00:00'),
 	( '26/02/18', '23:00:00', '14:00:00'),
-	( '29/02/18', '16:00:00', '10:00:00'),
+	( '25/02/18', '16:00:00', '10:00:00'),
 	( '05/03/18', '18:00:00', '09:30:00'),
 	( '16/04/18', '20:00:00', '13:00:00'),
 	( '27/05/18', '21:00:00', '14:00:00');
@@ -170,10 +170,10 @@ VALUES	( 'fietsen', 'Groenstraat, Tienen'),
 	( 'bowling', 'Leuvenselaan, Tienen'),
 	( 'zwemmen', 'Ooievaarstraat, Tienen'),
 	( 'fitness', 'Peperstraat, Tienen'),
-	( 'yoga', 'Croonestraat, Leuven')
+	( 'yoga', 'Croonestraat, Leuven');
 
-INSERT INTO "dbR01_g03".rapportage (rapportage_id, opmerking, programma_id)
-VALUES (1, 'Te vroeg', 1),
+INSERT INTO "dbR01_g03".rapportage ( opmerking, programma_id)
+VALUES ( 'Te vroeg', 1),
 	( 'Perfect', 2),
 	( 'Meer pauzes', 3),
 	( 'Perfect', 4),
