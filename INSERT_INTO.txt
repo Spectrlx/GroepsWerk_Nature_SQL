@@ -20,10 +20,13 @@ VALUES
 	( 'Vincent Leclercq', 0448100287, 'Rue de la Belgique 90', 'Brussel', 'vincent.leclercq@hotmail.com', 'vast'),
 	( 'Christine Martin', 0992420529, 'Helmstraat 207', 'Antwerpen', 'christina.martin@gmail.com', 'vrijwilliger'),
 	( 'Bert De Grote', 0448193882, 'Blijde Inkomststraat 87', 'Leuven', 'bertdegreat@icloud.com', 'vrijwilliger'),
-	( 'Lien Laurent', 0489002938, 'Gilainstraat 20', 'Tienen', 'lienlaurant@gmail.com', 'vast');
+	( 'Lien Laurent', 0489002938, 'Gilainstraat 20', 'Tienen', 'lienlaurant@gmail.com', 'vast'),
+	( 'Lien Laurent', 0489002938, 'Gilainstraat 20', 'Tienen', 'lienlaurant@gmail.com', 'vast'),
+	( 'Bert De Grote', 0448193882, 'Blijde Inkomststraat 87', 'Leuven', 'bertdegreat@icloud.com', 'vrijwilliger');
 
 INSERT INTO "dbR01_g03".klant ( naam, telefoon, betalingsgegevens, adres, gemeente, email)
-VALUES	( 'Emma Lejeune', 0461992726, 'BE32 9978 1260 2997', 'Alexianenweg 18', 'Antwerpen', 'emmalejeune@gmail.com'),
+VALUES	
+	( 'Emma Lejeune', 0461992726, 'BE32 9978 1260 2997', 'Alexianenweg 18', 'Antwerpen', 'emmalejeune@gmail.com'),
 	( 'Lucas Smets', 0432998267, 'BE32 7723 1098 2192', 'Beekstraat 165', 'Leuven', 'lucas.smets@hotmail.com'),
 	( 'Arthur Claessens', 0238197026, 'BE56 9128 2735 0398', 'Populierenstraat 17', 'Brussel', 'kingarthur@gmail.com'),
 	( 'Hugo Vanschouwbroek', 0488729108, 'NL22 2909 2102 8565', 'Stokstaartstraat 20C', 'Amsterdam', 'hugo.vanschouwbroek@gmail.com'),
