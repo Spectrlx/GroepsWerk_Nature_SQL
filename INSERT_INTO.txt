@@ -38,18 +38,18 @@ VALUES
 	( 'Lisa Willems', 0488228119, 'BE99 1264 3748 2384', 'Groenstraat 666', 'Tienen', 'lisa.willems@gmail.com');
 
 INSERT INTO "dbR01_g03".factuur ( factuur_datum, betaald, programma, klant_id)
-VALUES	( '02/12/17', true, 'team building', 1),
-	( '04/02/18', true, 'adventure', 2),
-	( '12/04/18', false, 'zelf ontdekking', 3),
-	( '12/04/18', false, 'zelf ontdekking extra', 3),
-	( '27/02/18', true, 'sport', 5),
-	( '18/01/18', false, 'team building', 6),
-	( '10/02/18', true, 'sport', 6),
-	( '01/01/18', true, 'revalidatie', 7),
-	( '16/05/17', true, 'sport', 8),
-	( '08/05/18', false, 'zelf ontdekking', 9),
-	( '10/02/18', true, 'team building', 4),
-	( '15/12/17', true, 'sport', 10);
+VALUES	( '02/12/17', true, 195.50, 'team building', 1),
+	( '04/02/18', true, 500.82, 'adventure', 2),
+	( '12/04/18', false, 265.30, 'zelf ontdekking', 3),
+	( '12/04/18', false,265.30, 'zelf ontdekking extra', 3),
+	( '27/02/18', true,265.30, 'sport', 5),
+	( '18/01/18', false,265.30, 'team building', 6),
+	( '10/02/18', true,265.30, 'sport', 6),
+	( '01/01/18', true,265.30, 'revalidatie', 7),
+	( '16/05/17', true,265.30, 'sport', 8),
+	( '08/05/18', false,265.30, 'zelf ontdekking', 9),
+	( '10/02/18', true,265.30, 'team building', 4),
+	( '15/12/17', true,265.30, 'sport', 10);
 
 INSERT INTO "dbR01_g03".programma ( datum, einduur, startuur)
 VALUES	( '22/04/17', '12:00:00', '8:00:00'),
@@ -112,25 +112,25 @@ VALUES	( 20, 3),
 	( 20, 1),
 	( 26, 13);
 
-INSERT INTO "dbR01_g03".groep ( aantal_personen, leeftijdcategorie, opmerkingen, groepdeelnemers_id)
-VALUES	( 20, 16, NULL, 1),
-	( 12, 30, NULL, 2),
-	( 13, 30, 'Kritiek op opsplitsing', 2),
-	( 11, 18, NULL, 3),
-	( 18, 40, 'Onstabiel groepslid', 4),
-	( 6, 18, NULL, 5),
-	( 12, 50, NULL, 6),
-	( 15, 40, NULL, 7),
-	( 15, 50, NULL, 7),
-	( 10, 10, 'Werkvorm weinig impact op groepsleden', 8),
-	( 10, 20, NULL, 9),
-	( 12, 25, NULL, 10),
-	( 20, 30, NULL, 11),
-	( 21, 60, 'Kritiek op werkvorm', 12),
-	( 7, 40, NULL, 13),
-	( 20, 30, 'Probleem met begeleider', 14),
-	( 13, 20, NULL, 15),
-	( 13, 40, NULL, 15);
+INSERT INTO "dbR01_g03".groep ( aantal_personen, leeftijdcategorie, opmerkingen, groepdeelnemers_id, klant_id)
+VALUES	( 20, 16, NULL, 1,2),
+	( 12, 30, NULL, 2,3),
+	( 13, 30, 'Kritiek op opsplitsing', 2,5),
+	( 11, 18, NULL, 3,2),
+	( 18, 40, 'Onstabiel groepslid', 4,12),
+	( 6, 18, NULL, 5,15),
+	( 12, 50, NULL, 6,16),
+	( 15, 40, NULL, 7,17),
+	( 15, 50, NULL, 7,18),
+	( 10, 10, 'Werkvorm weinig impact op groepsleden', 8,14),
+	( 10, 20, NULL, 9,13),
+	( 12, 25, NULL, 10,11),
+	( 20, 30, NULL, 11,10),
+	( 21, 60, 'Kritiek op werkvorm', 12,15),
+	( 7, 40, NULL, 13,6),
+	( 20, 30, 'Probleem met begeleider', 14,7),
+	( 13, 20, NULL, 15,3),
+	( 13, 40, NULL, 15,1);
 
 INSERT INTO "dbR01_g03".individu ( naam, leeftijd, klant_id, groepdeelnemers_id)
 VALUES	( 'Theo', 54, 1, 1),
