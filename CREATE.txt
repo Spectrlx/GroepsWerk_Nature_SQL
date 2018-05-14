@@ -1,3 +1,7 @@
+CREATE SCHEMA "dbR01_g03" AUTHORIZATION r0716728;
+GRANT ALL ON SCHEMA "dbR01_g03" TO r0706989;
+GRANT ALL ON SCHEMA "dbR01_g03" TO r0709610;
+
 CREATE Table IF NOT EXISTS  "dbR01_g03".Begeleider (
 	begeleider_id SERIAL  NOT NULL,
 	naam varchar(50) not null,
@@ -156,7 +160,8 @@ CREATE table if not exists "dbR01_g03".ProgrammaBegeleiding (
 
 );
 
-
+grant all on all tables on schema "dbR01_g03" to r0709610;
+grant all on all tables on schema "dbR01_g03" to r0716728;
 
 
 

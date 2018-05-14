@@ -2,7 +2,7 @@
 
 INSERT INTO "dbR01_g03".begeleider ( naam, telefoon, adres, gemeente, email, soort_begeleider)
 VALUES	
-	( 'Brent De Vis', 0467354719, 'Sint-Antoniusberg 10', 'Leuven', 'brent.devos@gmail.com', 'hoofd'),
+	( 'Brent De Vos', 0467354719, 'Sint-Antoniusberg 10', 'Leuven', 'brent.devos@gmail.com', 'hoofd'),
 	( 'Ruben Claes', 0472252987, 'Naamsestraat 35', 'Leuven', 'ruben.claes@gmail.com', 'hoofd'),
 	( 'Bart Janssens', 0456195432, 'Redingenstraat 101B', 'Leuven', 'bartieboy@hotmail.com', 'vast'),
 	( 'Pol Pieters', 0439112983, 'Janseniusstraat 12', 'Leuven', 'polpieters@gmail.com', 'vast'),
