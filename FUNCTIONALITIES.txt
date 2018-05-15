@@ -1,0 +1,19 @@
+--1)Een klant was erg tevreden van de werkvorm die werd toegepast op zijn groep de vorige keer dat hij zich had ingeschreven voor een programma bij nature. Deze klant komt opnieuw voor een programma en wilt nu graag dezelfde werkvorm voor de deelnemers.
+
+select w.naam, k.klant_id, k.naam, d.datum
+from "dbR01_g03".klant k inner join "dbR01_g03".groep g using(klant_id) inner join "dbR01_g03".groepDeelnemers gd using(groepdeelnemers_id) inner join "dbR01_g03".werkvorm w using(werkvorm_id) inner join "dbR01_g03".deelname d using(groepdeelnemers_id)
+where k.naam = 'Jan Claes'
+order by d.datum
+
+
+--2)Een van de werknemers wil graag weten wat het totaal bedrag van de facturen, gestuurd naar klanten van de groepen die hij begeleid heeft om te vergelijken met andere werknemers wie voor het meeste geld al gewerkt heeft.
+
+select f.bedrag, b.naam, k.klant_id
+from "dbR03_g03".begeleider b full outer join "dbR03_g03".programmabegeleiding pb using(begeleider_id) full outer join "dbR03_g03".programma p using(programma_id) full outer join "dbR03_g03".deelname d using(programma_id) full outer join "dbR03_g03".groepdeelnemers gd using(groepdeelnemers_id) full outer join "dbR03_g03".groep g using(groepdeelnemers_id) full outer join "dbR03_g03".klant k using(klant_id) full outer join "dbR03_g03".factuur f using(klant_id)
+order by k.klant_id
+
+--3) de begeleiders willen graag weten wie welk matriaal gebruikt heeft 
+
+--4) een begeleider wil graag een lijst van alle individuen met bij welke klant ze horen en welke werkvorm er op hun werd toegepast 
+select k.naam, i.leeftijd, i.opmerkingen, w.naam, w.aard
+from "dbR03_g03".individu i inner join "dbR03_g03".klant k using(klant_id) inner join "dbR03_g03".groepdeelnemers gd using(groepdeelnemers_id) inner join "dbR03_g03".werkvorm w using(werkvorm_id)
