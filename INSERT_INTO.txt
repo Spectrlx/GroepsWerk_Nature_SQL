@@ -20,7 +20,7 @@ VALUES
 	(17, 'Christine Martin', 0992420529, 'Helmstraat 207', 'Antwerpen', 'christina.martin@gmail.com', 'vrijwilliger'),
 	(18, 'Bert De Grote', 0448193882, 'Blijde Inkomststraat 87', 'Leuven', 'bertdegreat@icloud.com', 'vrijwilliger'),
 	(19, 'Lien Laurent', 0489002938, 'Gilainstraat 20', 'Tienen', 'lienlaurant@gmail.com', 'vast'),
-	(20 'Dien Daurent', 0489002938, 'Gilainstraat 20', 'Tienen', 'lienlaurant@gmail.com', 'vast');
+	(20, 'Dien Daurent', 0489002938, 'Gilainstraat 20', 'Tienen', 'lienlaurant@gmail.com', 'vast');
 
 INSERT INTO "dbR01_g03".klant (klant_id, naam, telefoon, betalingsgegevens, adres, gemeente, email)
 VALUES	
@@ -33,7 +33,12 @@ VALUES
 	(7, 'Anna Deputter',  0998129429, 'BE09 8828 1199 2834', 'Veldstraat 99', 'Tienen', 'annadeputter@gmail.com'),
 	(8, 'Thomas Gerrits', 0472289027, 'BE88 7389 2738 2882', 'Liefdestraat 65', 'Brussel', 'thomasger@hotmail.com'),
 	(9, 'Oscar Vandereycken', 098654008, 'BE12 7302 4775 0037', 'Veemarkt 23', 'Leuven', 'oscar.vandereycken3@telenet.be'),
-	(10, 'Lisa Willems', 0488228119, 'BE99 1264 3748 2384', 'Groenstraat 666', 'Tienen', 'lisa.willems@gmail.com');
+	(10, 'Lisa Willems', 0488228119, 'BE99 1264 3748 2384', 'Groenstraat 666', 'Tienen', 'lisa.willems@gmail.com'),
+	(11, 'Pieter Geens', 0411223348, 'BE12 3456 7890 1234', 'Pastoorsstraat 10', 'Leuven', 'petergens@gmail.org'),
+	(12, 'Franciscos VonsaksenCoburgh', 0444439876, 'BE22 2222 2222 9023', 'Popenstraat 100', 'Antwerpen', 'pausmail@yahoo.it'),
+	(13, 'Bottom Text', 0411223329, 'BE09 8765 4321 1234', 'LegeBaan 20', 'Tienen', 'bottom.text@icloud.be'),
+	(14, 'Lisa Hermans', 0471129458, 'BE12 6547 9876 7266', 'Groote Straat 238', 'Leuven', 'lisahermans@gmail.com'),
+	(15, 'Jan Claes', 0482238746, 'BE88 7766 0088 2277', 'straatsestraat straat 23', 'Brussel', 'jan.claes@telenet.be');
 
 INSERT INTO "dbR01_g03".factuur (factuur_id, factuur_datum, betaald, bedrag, programma, klant_id)
 VALUES	(1, '02/12/17', true, 195.50, 'team building', 1),
@@ -117,9 +122,9 @@ VALUES	(1, 20, 16, NULL, 1,2),
 	(4, 11, 18, NULL, 3,2),
 	(5, 18, 40, 'Onstabiel groepslid', 4,12),
 	(6, 6, 18, NULL, 5,15),
-	(7, 12, 50, NULL, 6,16),
-	(8, 15, 40, NULL, 7,17),
-	(9, 15, 50, NULL, 7,18),
+	(7, 12, 50, NULL, 6,1),
+	(8, 15, 40, NULL, 7,4),
+	(9, 15, 50, NULL, 7,6),
 	(10, 10, 10, 'Werkvorm weinig impact op groepsleden', 8,14),
 	(11, 10, 20, NULL, 9,13),
 	(12, 12, 25, NULL, 10,11),
