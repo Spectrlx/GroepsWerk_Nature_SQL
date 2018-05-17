@@ -8,9 +8,18 @@ DROP TABLE IF EXISTS "dbR01_g03".individu;
 DROP TABLE IF EXISTS "dbR01_g03".groep;
 DROP TABLE IF EXISTS "dbR01_g03".groepDeelnemers;
 DROP TABLE IF EXISTS "dbR01_g03".werkvorm;
+DROP TABLE IF EXISTS "dbR01_g03".programmabegeleiding;
 DROP TABLE IF EXISTS "dbR01_g03".begeleider;
 DROP TABLE IF EXISTS "dbR01_g03".programma;
 DROP TABLE IF EXISTS "dbR01_g03".factuur;
 DROP TABLE IF EXISTS "dbR01_g03".klant;
+
+DROP SCHEMA IF EXISTS "dbR01_g03";
+
+
+
+
+
+
 
 

@@ -40,19 +40,20 @@ VALUES
 	(14, 'Lisa Hermans', 0471129458, 'BE12 6547 9876 7266', 'Groote Straat 238', 'Leuven', 'lisahermans@gmail.com'),
 	(15, 'Jan Claes', 0482238746, 'BE88 7766 0088 2277', 'straatsestraat straat 23', 'Brussel', 'jan.claes@telenet.be');
 
-INSERT INTO "dbR01_g03".factuur (factuur_id, factuur_datum, betaald, bedrag, programma, klant_id)
-VALUES	(1, '02/12/17', true, 195.50, 'team building', 1),
-	(2, '04/02/18', true, 500.82, 'adventure', 2),
-	(3, '12/04/18', false, 265.30, 'zelf ontdekking', 3),
-	(4, '12/04/18', false,265.30, 'zelf ontdekking extra', 3),
-	(5, '27/02/18', true,265.30, 'sport', 5),
-	(6, '18/01/18', false,265.30, 'team building', 6),
-	(7, '10/02/18', true,265.30, 'sport', 6),
-	(8, '01/01/18', true,265.30, 'revalidatie', 7),
-	(9, '16/05/17', true,265.30, 'sport', 8),
-	(10, '08/05/18', false,265.30, 'zelf ontdekking', 9),
-	(11, '10/02/18', true,265.30, 'team building', 4),
-	(12, '15/12/17', true,265.30, 'sport', 10);
+INSERT INTO "dbR01_g03".factuur (factuur_id, factuur_datum, betaald, bedrag, programma,vervaldatum, klant_id)
+VALUES	
+	(1, '02/12/17', true, 195.50, 'team building','02/12/18', 1),
+	(2, '04/02/18', true, 500.82, 'adventure','02/03/18', 2),
+	(3, '12/04/18', false, 265.30, 'zelf ontdekking','02/05/18', 3),
+	(4, '12/03/18', false,235.30, 'zelf ontdekking extra','06/05/18', 3),
+	(5, '27/02/18', true,215.25, 'sport','02/12/17', 5),
+	(6, '18/01/18', false,145.30, 'team building','02/03/18', 6),
+	(7, '10/02/18', true,1050.35, 'sport','02/12/17', 6),
+	(8, '01/01/18', true,265.30, 'revalidatie','02/12/17', 7),
+	(9, '16/05/17', true,150.14, 'sport','02/12/17', 8),
+	(10, '08/05/18', true,78.10, 'zelf ontdekking','02/12/17', 9),
+	(11, '10/02/18', true,749.82, 'team building','02/12/17', 4),
+	(12, '15/12/17', true,265.30, 'sport','02/12/17', 10);
 
 INSERT INTO "dbR01_g03".programma (programma_id, datum, einduur, startuur)
 VALUES	(1, '22/04/17', '12:00:00', '8:00:00'),
