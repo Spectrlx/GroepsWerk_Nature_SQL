@@ -56,13 +56,16 @@ where r.opmerking = 'Goed' or r.opmerking = 'Perfect'
 order by b.naam
 
 -----------------------------------
-WIP
 
 5) De boekhouding wilt een overzicht van alle NIET betaalde facturen. Er wordt ook gecheckt of er een aanmaning moet gestuurd worden of niet
 
-select k.naam, k.klant_id, f.factuur_id, f.bedrag
+
+select k.naam, k.klant_id, f.factuur_id, f.bedrag, f.factuur_datum,f.vervaldatum,
+
+CASE WHEN f.vervaldatum < CURRENT_DATE THEN 'aanmaning verzenden'
+	 ELSE 'Tijdelijk in orde' 
+     END
+     
 from "dbR01_g03".klant k 
 inner join "dbR01_g03".factuur f using(klant_id)
 where f.betaald is not true
-CASE WHEN f.vervaldatum < CURRENT_DATE THEN SET aanmaning = 'true'
-
