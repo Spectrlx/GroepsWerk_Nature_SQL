@@ -25,7 +25,15 @@ CREATE TABLE IF NOT EXISTS "dbR01_g03".Klant (
 	gemeente varchar(45) not null,
 	email varchar(45) not null,
 	
+<<<<<<< Updated upstream
 	CONSTRAINT klant_id_PK PRIMARY KEY (klant_id)
+=======
+<<<<<<< Updated upstream
+	CONSTRAINT Klant_id_PK PRIMARY KEY (klant_id)
+=======
+	primary key klant_id
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 );
 
 

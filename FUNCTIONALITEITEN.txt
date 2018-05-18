@@ -1,14 +1,6 @@
 1)Een klant was erg tevreden van de werkvorm die werd toegepast op zijn groep de vorige keer dat hij zich had ingeschreven voor een programma bij nature. 
   Deze klant komt opnieuw voor een programma en wilt nu graag dezelfde werkvorm voor de deelnemers.
 
-select w.naam as werkvormnaam, k.klant_id, k.naam as klantnaam, d.datum
-from "dbR01_g03".klant k 
-inner join "dbR01_g03".groep g using(klant_id) 
-inner join "dbR01_g03".groepDeelnemers gd using(groepdeelnemers_id) 
-inner join "dbR01_g03".werkvorm w using(werkvorm_id) 
-inner join "dbR01_g03".deelname d using(groepdeelnemers_id)
-where k.naam = 'Jan Claes'
-order by d.datum
 
 -------------------------------------
 
