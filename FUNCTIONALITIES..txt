@@ -1,7 +1,7 @@
 1)Een klant was erg tevreden van de werkvorm die werd toegepast op zijn groep de vorige keer dat hij zich had ingeschreven voor een programma bij nature. 
   Deze klant komt opnieuw voor een programma en wilt nu graag dezelfde werkvorm voor de deelnemers.
 
-select w.naam, k.klant_id, k.naam, d.datum
+select w.naam as werkvormnaam, k.klant_id, k.naam as klantnaam, d.datum
 from "dbR01_g03".klant k 
 inner join "dbR01_g03".groep g using(klant_id) 
 inner join "dbR01_g03".groepDeelnemers gd using(groepdeelnemers_id) 
@@ -11,21 +11,25 @@ where k.naam = 'Jan Claes'
 order by d.datum
 
 -------------------------------------
-NIET HELEMAAL OKE
 
-2)Een van de werknemers wil graag weten wat het totaal bedrag van de facturen, gestuurd naar klanten van de groepen die hij begeleid heeft 
-  om te vergelijken met andere werknemers wie voor het meeste geld al gewerkt heeft.
 
-select f.bedrag, b.naam, k.klant_id
-from "dbR01_g03".begeleider b 
-full outer join "dbR01_g03".programmabegeleiding pb using(begeleider_id) 
-full outer join "dbR01_g03".programma p using(programma_id) 
-full outer join "dbR01_g03".deelname d using(programma_id) 
-full outer join "dbR01_g03".groepdeelnemers gd using(groepdeelnemers_id) 
-full outer join "dbR01_g03".groep g using(groepdeelnemers_id) 
-full outer join "dbR01_g03".klant k using(klant_id) 
-full outer join "dbR01_g03".factuur f using(klant_id)
-order by k.klant_id
+2) Bij het programma van 25/02/18 ging bij paintball het materiaal verloren. Men wilt weten voor welke waarde aan materiaal kwijt is om de verzekering op de hoogte te brengen. 
+   Ze zullen ook de begeleider die het laatst deze activiteit begeleid heeft aanspreken
+
+
+SELECT DISTINCT ( SELECT SUM(mat.waarde)
+ FROM "dbR01_g03".activiteit as ac 
+ INNER JOIN "dbR01_g03".materiaalselectie as ms ON (ac.activiteit_id = ms.activiteit_id) 
+ INNER JOIN "dbR01_g03".materiaal as mat ON (ms.materiaal_id = mat.materiaal_id)
+ WHERE ac.naam = 'paintball') as Totaal,b.naam, pr.datum
+ 
+FROM "dbR01_g03".activiteit as act 
+INNER JOIN "dbR01_g03".programmaonderdeel as po ON (act.activiteit_id = po.activiteit_id) 
+INNER JOIN "dbR01_g03".programma as pr ON (pr.programma_id = po.programma_id) 
+INNER JOIN "dbR01_g03".programmabegeleiding as pb ON (pr.programma_id = pb.programma_id) 
+INNER JOIN "dbR01_g03".begeleider as b ON (pb.begeleider_id = b.begeleider_id)
+
+WHERE pr.datum = '25/02/18'
 
 -------------------------------------
 
@@ -34,7 +38,7 @@ order by k.klant_id
    welke individuen er hebben meegedaan en  welke werkvorm er voor problemen gezorgd had. Hij wil graag ook extra info omtrent de leeftijd van de individuen 
    om zo eventueel een verband te kunnen maken tussen de leeftijd en de klacht op een bepaalde  werkvorm.
 
-select i.naam, i.leeftijd, k.naam, w.naam, w.aard
+select i.naam as individu_naam, i.leeftijd, k.naam as klant_naam, w.naam as werkvorm_naam, w.aard
 from "dbR01_g03".individu i 
 inner join "dbR01_g03".klant k using(klant_id) 
 inner join "dbR01_g03".groepdeelnemers gd using(groepdeelnemers_id) 
@@ -59,13 +63,11 @@ order by b.naam
 
 5) De boekhouding wilt een overzicht van alle NIET betaalde facturen. Er wordt ook gecheckt of er een aanmaning moet gestuurd worden of niet
 
-
-select k.naam, k.klant_id, f.factuur_id, f.bedrag, f.factuur_datum,f.vervaldatum,
-
-CASE WHEN f.vervaldatum < CURRENT_DATE THEN 'aanmaning verzenden'
-	 ELSE 'Tijdelijk in orde' 
-     END
-     
+select k.naam, k.klant_id, f.factuur_id, f.bedrag, f.factuur_datum, f.vervaldatum,
+(CASE WHEN f.vervaldatum < CURRENT_DATE THEN 'aanmaning verzenden' ELSE 'Tijdelijk in orde' END) as status 
 from "dbR01_g03".klant k 
 inner join "dbR01_g03".factuur f using(klant_id)
 where f.betaald is not true
+
+
+
